@@ -1,181 +1,139 @@
-# ☀️ Solar DePIN Hub — Solar-Native Decentralized Compute Infrastructure
+# ☀️ Solar DePIN Hub — Solar-Native Decentralized Infrastructure
 
-Solar DePIN Hub is building renewable-energy-aware infrastructure that connects **solar generation, distributed compute, real-world telemetry, AI workloads, and decentralized networks**.
+Solar DePIN Hub is developing renewable-energy-aware infrastructure that connects **solar generation, decentralized compute, real-world telemetry, AI workloads, and DePIN networks**.
 
-The goal is to create a scalable architecture where computing workloads can respond to renewable energy availability instead of treating energy supply and compute demand as completely separate systems.
+Our goal is to build distributed computing infrastructure capable of understanding the energy available to it and eventually adapting compute workloads to renewable-energy conditions.
 
-Our current testbed is based on a real solar installation in Ukraine and is being used to develop the software, telemetry, orchestration, and node architecture needed for a larger Solar DePIN network.
+The project is being developed around a real solar and compute testbed in Ukraine.
 
 ---
 
 ## 🌍 Vision
 
-Solar DePIN Hub is exploring a future where distributed computing infrastructure can:
+Traditional computing infrastructure treats energy and compute as largely separate systems.
 
-- Run directly alongside renewable energy generation
-- Monitor real-time solar production
-- Monitor environmental and weather conditions
-- Route workloads according to available renewable energy
-- Participate in decentralized compute networks
-- Support AI inference and other compute workloads
-- Use batteries to shift renewable energy into periods of lower generation
-- Scale from lightweight community nodes to larger GPU-powered infrastructure
-- Eventually coordinate energy, compute, storage, and network resources through intelligent orchestration
+Solar DePIN Hub is exploring a different architecture:
 
-Instead of simply deploying servers and connecting them to the grid, Solar DePIN Hub is designed around the relationship between **energy production and computing demand**.
+**Renewable Energy → Telemetry → Intelligent Orchestration → Distributed Compute**
 
----
+The long-term goal is infrastructure capable of coordinating:
 
-# ⚡ Current Solar Infrastructure
+- Solar generation
+- Battery energy storage
+- Compute resources
+- Environmental telemetry
+- Decentralized cloud workloads
+- AI workloads
+- Network availability
+- Distributed energy resources
 
-## Solar Array
-
-The current Solar DePIN Hub testbed uses:
-
-- **104 × Risen Energy RSM120-8-585M photovoltaic modules**
-- **585 W rated output per panel**
-- **60.84 kWp total DC nameplate capacity**
-- **2 physical solar platforms**
-- **52 panels per platform**
-- Monocrystalline photovoltaic technology
-
-### Panel Electrical Specifications
-
-| Specification | Value |
-|---|---:|
-| Manufacturer | Risen Energy Co., Ltd. |
-| Model | RSM120-8-585M |
-| Rated Power | 585 W |
-| Vmp | 34.12 V |
-| Imp | 17.15 A |
-| Voc | 41.00 V |
-| Isc | 18.16 A |
-| Maximum System Voltage | 1500 V DC |
-| Module Dimensions | 2172 × 1303 × 35 mm |
-| Module Weight | 32 kg |
-
-The exact PV string and MPPT configuration is still being documented.
+This creates the foundation for energy-aware and eventually **follow-the-sun computing infrastructure**.
 
 ---
 
-# 🔌 Inverter
+## ⚡ Current Testbed
 
-The current installation uses:
+The Solar DePIN Hub testbed currently includes real renewable-energy and compute infrastructure.
 
-**Huawei SUN2000-30KTL-M3**
+### Solar
 
-- Rated AC output: **30 kW**
-- Communications include RS485 / MBUS / WLAN
-- Integrated with Huawei FusionSolar monitoring
-- All 104 solar panels are currently connected through the existing inverter architecture
+- 104 monocrystalline solar panels
+- 2 solar platforms
+- 52 panels per platform
+- Risen Energy RSM120-8-585M modules
+- 585 W per panel
+- Approximately **60.84 kWp DC nameplate capacity**
 
-The current solar array therefore has approximately:
+### Inverter
 
-**60.84 kWp DC solar capacity → 30 kW AC inverter capacity**
+- Huawei SUN2000-30KTL-M3
+- 30 kW rated AC output
+- Huawei FusionSolar monitoring
+- Current array connected through one inverter
+- Second inverter planned as the infrastructure expands
 
-A second inverter is planned when additional funding becomes available.
+### Compute
 
-The exact future inverter model and final array redistribution have not yet been selected.
+The project is experimenting with local compute infrastructure including GPU-capable systems and containerized workloads.
+
+Current test infrastructure includes an NVIDIA RTX 3090-class GPU system.
+
+### Connectivity
+
+- Fiber-optic internet
+- Vega ISP
+- Up to 1 Gbps service
+
+### Environmental Data
+
+Weather and environmental telemetry are being incorporated into the architecture, including WeatherXM infrastructure.
 
 ---
 
-# 🔋 Battery Energy Storage
+## 🖥️ Solar DePIN Node Architecture
 
-A site-scale Battery Energy Storage System (**BESS**) is planned but is **not currently installed**.
+Solar DePIN Hub is developing two primary node classes.
 
-Battery storage is expected to become an important part of the Solar DePIN architecture because it can allow:
+### 🌱 Light Node
 
-- Solar energy generated during peak production to be used later
-- Compute workloads to continue during periods of reduced solar generation
-- Better matching between renewable generation and compute demand
-- Reduced dependence on instantaneous solar output
-- Future participation in energy-management and microgrid systems
+Light Nodes are intended to provide an accessible, energy-efficient way to participate in the network.
 
-Battery manufacturer, chemistry, capacity, power rating, and system topology remain under engineering evaluation.
+Potential responsibilities include:
 
----
-
-# 🖥️ Compute Infrastructure
-
-Solar DePIN Hub is developing a two-tier compute model:
-
-## Light Nodes
-
-Light Nodes are intended to make participation possible without requiring a large GPU server.
-
-Potential Light Node workloads include:
-
-- Solar telemetry collection
-- Environmental telemetry collection
-- Network monitoring
+- Telemetry collection
+- Environmental data
 - Data validation
+- Network monitoring
 - Lightweight AI inference
-- Embeddings
-- Classification
-- Small distributed workloads
 - DePIN services
+- Infrastructure agents
 - Availability verification
-- Local infrastructure agents
 
-The final Light Node hardware specification is still being designed.
+**Final Light Node specifications are currently under development.**
 
-Candidate hardware classes include low-power mini PCs and other energy-efficient x86 systems.
+### ⚡ Heavy Node
 
-**Status: Engineering Selection Pending**
+Heavy Nodes are designed for compute-intensive infrastructure.
 
----
-
-## Heavy Nodes
-
-Heavy Nodes are designed for compute-intensive workloads and larger renewable-energy sites.
-
-Potential workloads include:
+Potential responsibilities include:
 
 - GPU compute
 - AI inference
 - Decentralized cloud workloads
-- Akash deployments
+- Akash workloads
 - Containerized applications
-- Larger AI models
-- Rendering or simulation workloads
-- DePIN infrastructure services
-- Future confidential-compute workloads
+- DePIN infrastructure
+- Larger distributed workloads
 
-Current experimental compute infrastructure includes:
+Heavy Nodes may eventually integrate directly with larger renewable-energy systems and battery storage.
 
-- **NVIDIA RTX 3090 GPU**
-- Approximately **24 GB VRAM**
-- AMD Ryzen 7-class CPU
-- Docker-based workloads
-- Existing participation in decentralized compute infrastructure
-
-Exact production Heavy Node hardware standards are still being developed.
+**Final Heavy Node specifications are currently under development.**
 
 ---
 
-# 🧠 Energy-Aware Compute
+## 🧠 Energy-Aware Compute
 
-One of the core research areas of Solar DePIN Hub is **energy-aware workload orchestration**.
-
-The long-term architecture is intended to combine:
+A core Solar DePIN Hub research area is connecting renewable-energy telemetry directly with compute orchestration.
 
 ```text
-Solar Generation
-       │
-       ▼
-Solar Inverter
-       │
-       ├──► Energy Telemetry
-       │
-       ▼
-Battery Storage
-       │
-       ▼
-Energy-Aware Orchestrator
-       │
-       ├──► Light Nodes
-       │
-       ├──► Heavy GPU Nodes
-       │
-       └──► Decentralized Compute Networks
+                 SOLAR ENERGY
+                      │
+                      ▼
+                 PV INVERTER
+                      │
+             ┌────────┴────────┐
+             │                 │
+             ▼                 ▼
+      ENERGY TELEMETRY    BATTERY STORAGE
+             │              (planned)
+             └────────┬────────┘
+                      ▼
+            ENERGY-AWARE CONTROL
+                      │
+             ┌────────┴────────┐
+             ▼                 ▼
+        LIGHT NODES        HEAVY NODES
+                               │
+                               ▼
+                     DECENTRALIZED COMPUTE
 
